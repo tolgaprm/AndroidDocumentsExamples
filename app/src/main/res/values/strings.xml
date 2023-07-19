@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">InvioDocuments</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="light_theme">Light Theme</string>
+</resources>

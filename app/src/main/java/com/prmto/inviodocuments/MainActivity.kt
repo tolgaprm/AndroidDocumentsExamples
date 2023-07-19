@@ -1,24 +1,29 @@
 package com.prmto.inviodocuments
 
-import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.prmto.inviodocuments.databinding.ActivityMainBinding
+import java.util.Locale
+
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(
+            layoutInflater
+        )
+        setContentView(binding.root)
+
+        showThirdEditTextIfLanguageIsTr()
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-
-        if (newConfig.uiMode == Configuration.UI_MODE_NIGHT_YES) {
-            Toast.makeText(this, "Dark Mode", Toast.LENGTH_SHORT).show()
-        } else if (newConfig.uiMode == Configuration.UI_MODE_NIGHT_NO) {
-            Toast.makeText(this, "Light Mode", Toast.LENGTH_SHORT).show()
+    private fun showThirdEditTextIfLanguageIsTr() {
+        val currentLanguage = Locale.getDefault().language
+        if (currentLanguage == "tr") {
+            binding.editTextThird.visibility = View.VISIBLE
         }
     }
 }

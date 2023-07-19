@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="first_edit_text">Birinci Edit Text</string>
+    <string name="second_edit_text">İkinci Edit Text</string>
+    <string name="third_edit_text">Üçüncü Edit Text</string>
+</resources>

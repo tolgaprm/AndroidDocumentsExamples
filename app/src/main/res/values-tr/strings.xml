@@ -2,4 +2,7 @@
 <resources>
     <string name="dark_theme">Koyu Tema</string>
     <string name="light_theme">Açık Tema</string>
+
+    <string name="happy_birthday_text">İyiki Doğdun, Sam!</string>
+    <string name="signature_text">Emma'dan</string>
 </resources>

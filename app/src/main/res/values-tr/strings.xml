@@ -4,5 +4,6 @@
     <string name="light_theme">Açık Tema</string>
 
     <string name="happy_birthday_text">İyiki Doğdun, Sam!</string>
-    <string name="signature_text">Emma'dan</string>
+    <string name="signature_text">Emma\'dan</string>
+    <string name="roll">Zarı At</string>
 </resources>

@@ -1,19 +1,39 @@
 package com.prmto.inviodocuments
 
 fun main() {
-    println("Happy Birthday, Rover!")
+    val age = 24
+    val layers = 5
+    printCakeCandles(age)
+    printCakeTop(age)
+    printCakeBottom(age, layers)
+}
 
-    // Let's print a cake!
-    println("   ,,,,,   ")
-    println("   |||||   ")
-    println(" =========")
-    println("@@@@@@@@@@@")
-    println("{~@~@~@~@~}")
-    println("@@@@@@@@@@@")
+fun printCakeCandles(age: Int) {
+    print(" ")
+    repeat(age) {
+        print(",")
+    }
+    println()
 
-    // This prints an empty line.
-    println("")
+    print(" ") // Print the inset of the candles on the cake
+    repeat(age) {
+        print("|")
+    }
+    println()
+}
 
-    println("You are already 5!")
-    println("5 is the very best age to celebrate!")
+fun printCakeTop(age: Int) {
+    repeat(age + 2) {
+        print("=")
+    }
+    println()
+}
+
+fun printCakeBottom(age: Int, layers: Int) {
+    repeat(layers) {
+        repeat(age + 2) {
+            print("@")
+        }
+        println()
+    }
 }

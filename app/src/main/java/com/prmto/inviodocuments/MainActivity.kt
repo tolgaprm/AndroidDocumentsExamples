@@ -3,6 +3,7 @@ package com.prmto.inviodocuments
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.prmto.inviodocuments.databinding.ActivityMainBinding
 
@@ -11,8 +12,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Log.d("MainActivity", "onCreate")
 
         binding.btnRunMultiwindowModeWithYouTube.setOnClickListener {
             startMultiWindowModeWithYoutubeApp()
@@ -21,6 +24,29 @@ class MainActivity : AppCompatActivity() {
         binding.btnRunMultiWindowModeWithUrl.setOnClickListener {
             startMultiWindowModeWithUrl()
         }
+    }
+
+    override fun onTopResumedActivityChanged(topResumed: Boolean) {
+        if (topResumed) {
+            Log.d("MainActivity", "onTopResumedActivityChanged On the top Resume")
+        } else {
+            Log.d("MainActivity", "onTopResumedActivityChanged Not on the Top")
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("MainActivity", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("MainActivity", "onPause")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("MainActivity", "onDestroy")
     }
 
 

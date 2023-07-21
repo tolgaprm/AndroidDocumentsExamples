@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">InvioDocuments</string>
+    <string name="app_name" translatable="false">InvioDocuments</string>
     <string name="dark_theme">Dark Theme</string>
     <string name="light_theme">Light Theme</string>
+    <string name="run_multiwindow_mode">Run MultiWindow Mode</string>
+    <string name="run_multiwindow_mode_with_youtube">Run MultiWindow Mode with Youtube</string>
 </resources>

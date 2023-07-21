@@ -2,4 +2,6 @@
 <resources>
     <string name="dark_theme">Koyu Tema</string>
     <string name="light_theme">Açık Tema</string>
+    <string name="run_multiwindow_mode">Çoklu pencere Modunda çalıştır.</string>
+    <string name="run_multiwindow_mode_with_youtube">Youtube uygulaması çoklu pencere modunda çalıştır.</string>
 </resources>

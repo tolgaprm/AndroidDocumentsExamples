@@ -4,6 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.prmto.inviodocuments.databinding.ActivityMainBinding
 
@@ -27,6 +29,37 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnEnterPictureInPictureMode.setOnClickListener {
             enterPictureInPictureMode()
+        }
+    }
+
+    override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
+        return when (keyCode) {
+            KeyEvent.KEYCODE_SPACE -> {
+                Toast.makeText(this, "run Space", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            KeyEvent.KEYCODE_W -> {
+                Toast.makeText(this, "run W", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            KeyEvent.KEYCODE_A -> {
+                Toast.makeText(this, "run A", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            KeyEvent.KEYCODE_C -> {
+                if (event.isCtrlPressed) {
+                    Toast.makeText(this, "run Ctrl + C", Toast.LENGTH_SHORT).show()
+                    true
+                } else {
+                    Toast.makeText(this, "run C", Toast.LENGTH_SHORT).show()
+                    true
+                }
+            }
+
+            else -> super.onKeyUp(keyCode, event)
         }
     }
 

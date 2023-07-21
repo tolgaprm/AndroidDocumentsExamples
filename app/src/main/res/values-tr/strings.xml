@@ -4,4 +4,5 @@
     <string name="light_theme">Açık Tema</string>
     <string name="run_multiwindow_mode">Çoklu pencere Modunda çalıştır.</string>
     <string name="run_multiwindow_mode_with_youtube">Youtube uygulaması çoklu pencere modunda çalıştır.</string>
+    <string name="enter_picture_in_picture_mode">Resim içinde resim modu\'na geçiş yap.</string>
 </resources>

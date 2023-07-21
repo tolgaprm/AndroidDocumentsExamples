@@ -4,4 +4,5 @@
     <string name="light_theme">Light Theme</string>
     <string name="run_multiwindow_mode">Run MultiWindow Mode</string>
     <string name="run_multiwindow_mode_with_youtube">Run MultiWindow Mode with Youtube</string>
+    <string name="enter_picture_in_picture_mode">Enter picture in picture mode</string>
 </resources>

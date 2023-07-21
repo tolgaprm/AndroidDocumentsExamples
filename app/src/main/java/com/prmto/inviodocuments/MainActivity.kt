@@ -24,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnRunMultiWindowModeWithUrl.setOnClickListener {
             startMultiWindowModeWithUrl()
         }
+
+        binding.btnEnterPictureInPictureMode.setOnClickListener {
+            enterPictureInPictureMode()
+        }
     }
 
     override fun onTopResumedActivityChanged(topResumed: Boolean) {

@@ -1,27 +1,45 @@
 package com.prmto.inviodocuments
 
-import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.Toast
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.window.layout.WindowMetricsCalculator
 import com.prmto.inviodocuments.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        computeWindowSizeClasses()
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
+    private fun computeWindowSizeClasses() {
+        val metrics = WindowMetricsCalculator.getOrCreate()
+            .computeCurrentWindowMetrics(this)
 
-        if (newConfig.uiMode == Configuration.UI_MODE_NIGHT_YES) {
-            Toast.makeText(this, R.string.dark_theme, Toast.LENGTH_SHORT).show()
-        } else if (newConfig.uiMode == Configuration.UI_MODE_NIGHT_NO) {
-            Toast.makeText(this, R.string.light_theme, Toast.LENGTH_SHORT).show()
+        val widthDp = metrics.bounds.width() /
+                resources.displayMetrics.density
+        val widthWindowSizeClass = when {
+            widthDp < 600f -> WindowSizeClass.COMPACT
+            widthDp < 840f -> WindowSizeClass.MEDIUM
+            else -> WindowSizeClass.EXPANDED
         }
+
+        val heightDp = metrics.bounds.height() /
+                resources.displayMetrics.density
+        val heightWindowSizeClass = when {
+            heightDp < 480f -> WindowSizeClass.COMPACT
+            heightDp < 900f -> WindowSizeClass.MEDIUM
+            else -> WindowSizeClass.EXPANDED
+        }
+
+        Log.d("WindowSizeClass", "Width: $widthWindowSizeClass, Height: $heightWindowSizeClass")
     }
 }
+
+enum class WindowSizeClass { COMPACT, MEDIUM, EXPANDED }
